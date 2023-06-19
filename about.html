@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online learning platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    
+    <nav>
+        <img src="logo.png" alt="error">
+        <div class="navigation">
+            <ul>
+               <li><a  href="#">Home</a></li>
+               <li><a class="active" href="about.html">About us</a></li>
+               <li><a href="courses.html">Courses</a></li>
+               <li><a href="sign in.html">Sign in</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section id="about-home">
+        <h2>Enhance your bright future with D-education</h2>
+        <p>Learn your new skill and join our online classes .Join our courses and get a chance to have good job.Hundred of video lectures ,
+            Quiz,doubt session are being provided .We take the responsibilty our student.Get a chance and be a member of our society.
+        </p>
+        
+    </section>
+    <section id="features">
+        <h1>Awesome features</h1>
+        <p>A digital learning platform that allows access to complete library of online resources.</p>
+        <div class="fea">
+            <div class="fea1">
+                <i class="fa fa-mortar-board"></i>
+                <h3>Scholarship facility</h3>
+                <p>Great scope to study at minimal cost ,apply fast to get the highest benefit.</p>
+            </div>
+            <div class="fea1">
+                <i class="fa fa-leanpub"></i>
+                <h3>Certification</h3>
+                <p>Get a free  certificate in course that you want to master in it.</p>
+            </div>
+            <div class="fea1">
+            <i class="fa fa-address-book"></i>
+            <h3>Teaching faculty</h3>
+            <p>Highly skilled professional staff is available which is trained in every aspect.</p>
+        </div>
+        </div>
+        <button id="animateButton">Animate</button>
+    </section>
+    <div class="about-c">
+        <div class="about-card">
+          <h2>Our Mission</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu lorem vitae elit commodo vestibulum. Integer feugiat auctor aliquet.</p>
+        </div>
+    
+        <div class="about-card">
+          <h2>Our Team</h2>
+          <p>We have a dedicated team of experienced professionals who are passionate about education and committed to providing the best learning experience for our students.</p>
+          <p>Meet our team members:</p>
+          <ul>
+            <li>John Doe - CEO</li>
+            <li>Jane Smith - Head of Operations</li>
+            <li>David Johnson - Curriculum Specialist</li>
+          </ul>
+        </div>
+    
+        <div class="about-card">
+          <h2>Our Values</h2>
+          <p>At our educational institution, we believe in:</p>
+          <ul>
+            <li>Excellence in education</li>
+            <li>Continuous learning and growth</li>
+            <li>Inclusivity and diversity</li>
+            <li>Collaboration and teamwork</li>
+          </ul>
+        </div>
+      </div>
+      <h1>Various picture to guide you about our website</h1>
+      <div class="slideshow-container">
+        <img src="coding.jpg" alt="Image 1">
+        <img src="coding1.jpg" alt="Image 2">
+        <img src="javaa (1).jpg" alt="Image 3">
+    
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
+      </div>
+    
+    </body>
+    <script src="js/code.jquery.com_jquery-3.7.0.min.js"></script>
+    <script>
+        alert("You are on about page")
+        
+        $(document).ready(function() {
+    $("#animateButton").click(function() {
+      $("#features").css("background-color", "#ff0000");
+    });
+  });
+  $(document).ready(function() {
+      var slideIndex = 0;
+      var slides = $(".slideshow-container img");
+      var prevBtn = $(".slideshow-container .prev");
+      var nextBtn = $(".slideshow-container .next");
+
+      function showSlide(n) {
+        // Wrap around to the first slide if the index is out of range
+        if (n >= slides.length) {
+          slideIndex = 0;
+        } else if (n < 0) {
+          slideIndex = slides.length - 1;
+        }
+
+        // Hide all slides
+        slides.hide();
+
+        // Show the current slide
+        slides.eq(slideIndex).show();
+      }
+      function nextSlide() {
+        slideIndex++;
+        showSlide(slideIndex);
+      }
+
+      function prevSlide() {
+        slideIndex--;
+        showSlide(slideIndex);
+      }
+
+      // Initialize the slideshow
+      showSlide(slideIndex);
+
+      // Attach click event handlers to the previous and next buttons
+      prevBtn.click(function() {
+        prevSlide();
+      });
+
+      nextBtn.click(function() {
+        nextSlide();
+      });
+  });
+
+    </script>
+    </html>
+   
+    
+    
+    
+    
+    
+    
+   

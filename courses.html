@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online learning platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+</head>
+<style>
+         nav{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    background-color: white;
+    justify-content: space-between;
+    padding: 1vw 7vw;
+    box-shadow: 2px 2px 9px whitesmoke;
+    position: fixed;
+    background-color:brown;
+
+}
+h1{
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: brown;
+    text-decoration-line: underline;
+}
+nav img{
+    max-width:150px;
+    max-height: 90px;
+    cursor: pointer;
+    opacity: 0.3;
+}
+nav .navigation ul{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+nav .navigation ul li{
+    list-style: none;
+    margin-left: 30px;
+    border-radius: 1px solid black;
+}
+nav .navigation ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: 550px;
+
+    
+}
+nav .navigation ul li a.active,
+nav .navigation ul li a:hover{
+    color: orange;
+}
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: brown;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 10px;
+    }
+
+    .course-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 20px;
+    }
+
+    .course-card {
+      background-color: #f9f9f9;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      padding: 20px;
+      width: 300px;
+    }
+
+    .course-card h2 {
+        
+      margin-top: 10px;
+    }
+
+    .course-card p {
+      margin: 20px 0;
+    }
+    #myElement {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+    .cou {
+      font-size: 24px;
+      transition: transform 0.3s;
+    }
+    .zoom-in {
+      transform: scale(1.5);
+    }
+  </style>
+</head>
+<body>
+    <nav>
+        <img src="logo.png" alt="error">
+        <div class="navigation">
+            <ul>
+               <li><a  href="#">Home</a></li>
+               <li><a  href="about.html">About us</a></li>
+               <li><a  class="active"href="courses.html">Courses</a></li>
+               <li><a  href="sign in.html">Sign in</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+  <header>
+    <h1>Courses</h1>
+  </header>
+
+  <div class="course-container">
+    <div class="course-card">
+      <h2>Course 1</h2>
+      <p>Description of Course 1.</p>
+      <button onclick="enroll('Course 1')">Enroll</button>
+    </div>
+
+    <div class="course-card">
+      <h2>Course 2</h2>
+      <p>Description of Course 2.</p>
+      <button onclick="enroll('Course 2')">Enroll</button>
+    </div>
+
+    <div class="course-card">
+      <h2>Course 3</h2>
+      <p>Description of Course 3.</p>
+      <button onclick="enroll('Course 3')">Enroll</button>
+    </div>
+  </div>
+  <section id="about-container">
+    <div class="about-img">
+        <img src="boy.jpg" alt="error" height="290px",width="150px">
+    </div>
+
+    <div class="about-text">
+<h2>The  D-education  presents you the best online course</h2>
+<p>A digital learning platform that allows access to complete library of online resources. Great scope to study at minimal cost.</p>
+    </div>
+
+    <div class="about-fea">
+        <h1>Welcome to D-education</h1>
+        <img src="boycoding.jpg" alt="error" height="150px" width="130px">
+<div class="fea-text">
+<h5>300+ courses</h5>
+<p>various languages like c,c++,java ,python are shortlisted here</p>
+</div>
+<div class="about-fea">
+<img src="boycoding.jpg" alt="error" height="150px" width="130px">
+<div class="fea-text">
+<h5>200+ courses</h5>
+<p>Basics of Dsa is taught here by professional teachers</p>
+</div>
+</div>
+</div>
+
+</section>
+<div class="course">
+    <h2>Course Name</h2>
+    <p>Description of the course</p>
+    <button id="colorBtn">Change Color</button>
+  </div>
+  <div id="myElement"></div>
+  <script src="js/code.jquery.com_jquery-3.7.0.min.js"></script>
+  <script>
+    // JavaScript
+    function enroll(courseName) {
+      // Replace this with your enrollment logic
+      alert('Enrolled in ' + courseName);
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+  var colorBtn = document.getElementById("colorBtn");
+  
+  colorBtn.addEventListener("click", function() {
+    var courses = document.getElementsByClassName("course");
+    
+    // Loop through each course and change the background color
+    for (var i = 0; i < courses.length; i++) {
+      courses[i].style.backgroundColor = getRandomColor();
+    }
+  });
+  
+  // Function to generate a random color
+  function getRandomColor() {
+    var letters = "0123456789ABCDEF";
+    var color = "#";
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+});
+$(document).ready(function() {
+      // Fade in the element over 1 second
+      $("#myElement").fadeIn(1000);
+
+      // Move the element across the screen over 2 seconds
+      $("#myElement").animate({
+        left: '+=200px'
+      }, 2000);
+    });
+
+    $(document).ready(function() {
+      $(".course-card").hover(
+        function() {
+          $(this).addClass("zoom-in");
+        },
+        function() {
+          $(this).removeClass("zoom-in");
+        }
+      );
+    });
+
+
+
+
+  </script>
+</body>
+</html>
